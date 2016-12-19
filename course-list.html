@@ -1,0 +1,21 @@
+<dom-module id="course-list">
+	<template>
+		<template is="dom-repeat" items="{{courseList}}">
+			<my-course-card course-id="{{item}}"></my-course-card>
+		</template>
+		<style>
+			
+		</style>
+	</template>
+	<script>
+		Polymer({
+			is: "course-list",
+			ready: function() {
+				this.courseList = ["RcGyVTAoXEU", "RcGyVTAoXEU", "RcGyVTAoXEU"];
+			},
+			properties: {
+				courseList: {}
+			}
+		})
+	</script>
+</dom-module>

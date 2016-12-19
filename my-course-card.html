@@ -1,0 +1,61 @@
+<link rel="import" href="node_modules/basic-star-rating/star-rating.html">
+<link rel="import" href="bower_components/google-youtube/google-youtube.html">
+<link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="my-course-card">
+	<template>
+		<iron-ajax
+			auto
+      id="ajax-add"
+      url="/"
+      verbose="true"
+      handle-as="json"
+      params="{{_getParams(pressed, courseId)}}"
+      debounce-duration="300">	
+		</iron-ajax>
+		<style>
+		/* local styles go here */
+			:host {
+        display: block;
+        box-shadow: 0 4px 8px 0 rgba(245,47,87,0.2);
+        max-width: 400px;
+        margin: 1rem auto 1rem auto;
+      }
+      .container {
+    		padding: 2px 16px;
+			}
+			.stars-container {
+				padding-top: 1rem;
+			}
+    
+		</style>
+		<div class="container">
+			<h3>Learn how to better use stress!</h3>
+			<add-to-playlist pressed="{{pressed}}"></add-to-playlist>
+			<google-youtube
+        video-id="{{courseId}}"
+        height="270px"
+        width="480px"
+        rel="0"
+        start="5">
+			</google-youtube>
+			<section class="stars-container">
+				<star-rating maxvalue="5"></star-rating>
+			</section>
+		</div>
+	</template>
+	<script>
+	  Polymer({
+	    is: 'my-course-card',
+	    properties: {
+	    	courseId: String,
+	    	pressed: {
+	    		type: Boolean	    	
+	    	}
+	    },
+	    _getParams: function (pressed, courseId) {
+	    	return {pressed: pressed, courseId: courseId}
+	    }
+	  })
+	</script>
+</dom-module>

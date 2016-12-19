@@ -1,0 +1,14 @@
+{
+  "name": "my-course-card",
+  "version": "1.0.0",
+  "description": "course card",
+  "main": "index.html",
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "^0.7.0",
+    "google-youtube": "^1.2.1"
+  }
+}

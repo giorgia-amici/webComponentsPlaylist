@@ -9,6 +9,7 @@
   ],
   "dependencies": {
     "webcomponentsjs": "^0.7.0",
-    "google-youtube": "^1.2.1"
+    "google-youtube": "^1.2.1",
+    "iron-ajax": "^1.4.3"
   }
 }

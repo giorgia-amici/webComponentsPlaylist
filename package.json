@@ -2,5 +2,16 @@
   "name": "my-course-playlist",
   "description": "course playlist",
   "version": "1.0.0",
-  "author": "Giorgia Amici"
+  "author": "Giorgia Amici",
+  "scripts": {
+    "start": "npm run frontend & npm run server",
+    "frontend": "./node_modules/polyserve/bin/polyserve",
+    "server": "node server/server.js"
+  },
+  "dependencies": {
+    "basic-star-rating": "^3.3.1",
+    "body-parser": "*",
+    "express": "*",
+    "polyserve": "*"
+  }
 }

@@ -1,7 +1,7 @@
 <!-- new element that is the container of all the different courses cards. Similar to a collection -->
 <link rel="import" href="my-course-card.html">
 
-<dom-module id="course-list">
+<dom-module id="favourites-list">
 <template>
 <template is="dom-repeat" items="{{courseList}}">
   <my-course-card course-id="{{item}}"></my-course-card>
@@ -12,8 +12,8 @@
     }
   </style>
   <iron-ajax
-      id="ajaxCourses"
-      url="http://localhost:8081/api/courses"
+      id="ajaxFavourites"
+      url="http://localhost:8081/api/favourites"
       handle-as="json"
       on-response="responseHandler"
       debounce-duration="300">  
@@ -21,12 +21,12 @@
 </template>
 <script>
 Polymer({
-  is: "course-list",
+  is: "favourites-list",
   properties: {
     courseList: {}
   },
   ready: function () {
-      this.$.ajaxCourses.generateRequest();
+      this.$.ajaxFavourites.generateRequest();
   },
   responseHandler: function(d) {
     this.courseList = d.detail.response;
